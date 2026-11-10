@@ -1,0 +1,14 @@
+{
+  "page": "About Us — Founder Story",
+  "repository": "tbmaui/cc-page-about",
+  "source_file": "cc-about-page.zip",
+  "source_sha256": "87aa76622f53528a214730c034a546503ecf06ca8c961384b5ddc60418896fa3",
+  "wordpress_pattern": "cc-modern/page-about-story",
+  "wordpress_status": "validated",
+  "theme_dependency": {
+    "repository": "tbmaui/complete-controller-modern-theme",
+    "minimum_reviewed_version": "1.3.13"
+  },
+  "review_date": "2026-11-10",
+  "prototype_repository": "https://github.com/tbmaui/founder-s-story"
+}

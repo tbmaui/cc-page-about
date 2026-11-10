@@ -1,0 +1,126 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Complete Controller brand system — all colors oklch, mapped from client tokens. */
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-mist: var(--brand-mist);
+  --color-inverse: var(--inverse);
+  --color-inverse-muted: var(--inverse-muted);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.32 0.025 165);           /* #2a3b35 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.32 0.025 165);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.32 0.025 165);
+  --primary: oklch(0.46 0.035 165);              /* #466359 */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0 0);                  /* #f6f6f6 */
+  --secondary-foreground: oklch(0.32 0.025 165);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.5 0 0);            /* #666 */
+  --accent: oklch(0.67 0.19 38);                 /* #f36334 */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.005 260);               /* #e5e7eb */
+  --input: oklch(0.92 0.005 260);
+  --ring: oklch(0.46 0.035 165);
+  --brand-deep: oklch(0.32 0.025 165);
+  --brand-soft: oklch(0.6 0.04 165);             /* #6a9082 */
+  --brand-tint: oklch(0.46 0.035 165 / 12%);
+  --brand-mist: oklch(0.78 0.05 165);            /* light sage tint of #6a9082, for text on deep green */
+  --inverse: oklch(1 0 0);
+  --inverse-muted: oklch(1 0 0 / 72%);
+  --shadow-card: 0 12px 36px oklch(0.32 0.025 165 / 7%);
+  --shadow-floating: 0 16px 48px oklch(0.32 0.025 165 / 12%);
+  --ease-standard: cubic-bezier(.2,.8,.2,1);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.012em; line-height: 1.18; font-weight: 400; }
+  /* Serif display text uses the regular cut of Cormorant Garamond. */
+  blockquote, .font-display { font-family: var(--font-display); font-weight: 400; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--color-ring); outline-offset: 3px; }
+}
+
+@utility container-cc {
+  width: min(calc(100% - 2 * clamp(20px, 4vw, 64px)), 1200px);
+  margin-inline: auto;
+}
+/* Left inset that matches container-cc's left edge while the element itself spans the full page width. */
+@utility bleed-panel {
+  padding-left: max(clamp(20px, 4vw, 64px), calc((100% - 1200px) / 2));
+}
+/* Airier than the token file's editorial step (96-144px): sections now breathe more. */
+@utility section-y { padding-block: clamp(108px, 12vw, 192px); }
+/* Top-only variant: used when a section ends in a full-bleed band, so the colour change lands right at the band. */
+@utility section-t { padding-top: clamp(108px, 12vw, 192px); }
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-floating { box-shadow: var(--shadow-floating); }
+@utility btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 12px 26px; border-radius: 4px; border: 1px solid transparent;
+  font-weight: 600; font-size: 0.9rem; text-decoration: none;
+  transition: transform 160ms var(--ease-standard), background 160ms var(--ease-standard);
+  &:hover { transform: translateY(-2px); }
+}
+@utility btn-accent { background: var(--color-accent); color: var(--color-accent-foreground); }
+@utility btn-primary { background: var(--color-primary); color: var(--color-primary-foreground); }
+@utility btn-outline { border-color: currentColor; background: transparent; }
+@utility text-link {
+  font-style: italic; color: var(--color-primary); text-decoration: none;
+  &:hover { color: var(--color-brand-deep); }
+}

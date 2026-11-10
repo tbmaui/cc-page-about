@@ -211,6 +211,7 @@ $body = preg_replace( '/^\s*(\/\*\*.*?\*\/)?\s*/s', '', $body );
 $body = str_replace( 'class="wp-block-group ', 'class="wp-block-group is-layout-flow wp-block-group-is-layout-flow ', $body );
 
 $css = cc_build_css( $theme );
+$extra_assets = 'cpa-partners' === $page ? '<link rel="stylesheet" href="../wordpress/assets/css/cpa-partners.css"><script src="../wordpress/assets/js/cpa-partners.js" defer></script>' : ''; 
 
 echo <<<HTML
 <!doctype html>
@@ -218,6 +219,7 @@ echo <<<HTML
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{$extra_assets}
 <title>cc-modern — {$page} preview</title>
 
 <style>

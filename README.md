@@ -1,5 +1,9 @@
 # Complete Controller ? About Us — Founder Story
 
+[View page in your browser](https://tbmaui.github.io/cc-page-about/)
+
+Open the link above to see the styled HTML page with its bundled fonts and images. No download or HTML viewer is needed.
+
 This page is available in **WordPress and plain HTML**, based on the reviewed cc-modern 1.3.14 theme styling.
 
 [Download both formats from the latest release](https://github.com/tbmaui/cc-page-about/releases/latest).
@@ -46,3 +50,7 @@ See `html/README.md` for asset paths, supported embedding and launch configurati
 ## Earlier prototype
 
 [Original prototype](https://github.com/tbmaui/founder-s-story) remains separate and unchanged.
+
+## Browser preview
+
+GitHub Pages publishes the tracked `html/` export whenever that folder changes on `main`. You can also republish it from Actions > Publish page preview > Run workflow. The preview includes a noindex directive to discourage search indexing. It uses the standalone page content described above.

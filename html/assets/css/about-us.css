@@ -4,10 +4,10 @@
 #cc-html-cc-page-about *,
 #cc-html-cc-page-about *::before,
 #cc-html-cc-page-about *::after { box-sizing: border-box; }
-@font-face{font-family:"CC About Us Montserrat";font-weight:100 900;font-style:normal;font-display:swap;src:url("../fonts/about-us-montserrat-var.woff2") format("woff2")}
-@font-face{font-family:"CC About Us Old Standard TT";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/about-us-oldstandard-400.woff2") format("woff2")}
-@font-face{font-family:"CC About Us Old Standard TT";font-weight:700;font-style:normal;font-display:swap;src:url("../fonts/about-us-oldstandard-700.woff2") format("woff2")}
-@font-face{font-family:"CC About Us Old Standard TT";font-weight:400;font-style:italic;font-display:swap;src:url("../fonts/about-us-oldstandard-400-italic.woff2") format("woff2")}
+@font-face{font-family:"CC About Us Montserrat";font-weight:100 900;font-style:normal;font-display:swap;src:url("/assets/fonts/about-us-montserrat-var.woff2") format("woff2")}
+@font-face{font-family:"CC About Us Old Standard TT";font-weight:400;font-style:normal;font-display:swap;src:url("/assets/fonts/about-us-oldstandard-400.woff2") format("woff2")}
+@font-face{font-family:"CC About Us Old Standard TT";font-weight:700;font-style:normal;font-display:swap;src:url("/assets/fonts/about-us-oldstandard-700.woff2") format("woff2")}
+@font-face{font-family:"CC About Us Old Standard TT";font-weight:400;font-style:italic;font-display:swap;src:url("/assets/fonts/about-us-oldstandard-400-italic.woff2") format("woff2")}
 #cc-html-cc-page-about {
 --wp--preset--color--white: #ffffff;
 --wp--preset--color--cc-light: #f6f6f6;
@@ -1776,7 +1776,7 @@
    hero portrait is therefore removed, leaving the supplied office photograph
    as the only visual behind the copy. */
 #cc-html-cc-page-about .cc-hero--casi .cc-hero__media {
-	background: center / cover no-repeat url("../images/home-hero-office.png");
+	background: center / cover no-repeat none;
 }
 #cc-html-cc-page-about .cc-hero--casi .cc-hero__media img,
 #cc-html-cc-page-about .cc-hero--casi .cc-hero__person {
